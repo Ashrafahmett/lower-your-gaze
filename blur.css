@@ -1,0 +1,14 @@
+/* Everything starts blurred; content.js marks an element safe only after it was checked. */
+html:not([data-mb-off]) img:not([data-mb="safe"]):not([data-mb="revealed"]),
+html:not([data-mb-off]) video:not([data-mb="safe"]):not([data-mb="revealed"]),
+html:not([data-mb-off]) svg image:not([data-mb="safe"]):not([data-mb="revealed"]),
+html:not([data-mb-off]) [data-mb-bg]:not([data-mb-bg="safe"]):not([data-mb-bg="revealed"]) {
+  filter: blur(28px) grayscale(1) !important;
+  transition: filter 0.15s ease-out !important;
+}
+
+html:not([data-mb-off]) img[data-mb="blocked"],
+html:not([data-mb-off]) video[data-mb="blocked"],
+html:not([data-mb-off]) [data-mb-bg="blocked"] {
+  filter: blur(40px) grayscale(1) brightness(0.6) !important;
+}
